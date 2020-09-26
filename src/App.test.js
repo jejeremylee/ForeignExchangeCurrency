@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders exchange foreign currency page', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const pageHeader = getByText(/Foreign Exchange Currency/i);
+  expect(pageHeader).toBeInTheDocument();
 });
