@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from "axios";
-import BaseCurrency from "./baseCurrency/baseCurrency"
+import Currencies from "./currencies/currencies"
 import TargetCurrency from "./targetCurrency/targetCurrency"
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -21,6 +21,11 @@ class ExchangeCurrency extends React.Component {
                 'SGD',
                 'JPY',
                 'GBP',
+                'CAD',
+                'CHF',
+                'INR',
+                'MYR',
+                'KRW',
               ],
             displayedCurrency : [
                 'IDR',
@@ -31,6 +36,7 @@ class ExchangeCurrency extends React.Component {
         this.handleAddClick = this.handleAddClick.bind(this);
         this.handleAddClose = this.handleAddClose.bind(this);
         this.handleAddUpdate = this.handleAddUpdate.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     
@@ -40,7 +46,6 @@ class ExchangeCurrency extends React.Component {
           .then(response => {
             const currencyAr = [];
             currencyAr.push( response.data.rates)
-            console.log(currencyAr)
             this.setState({ currencies: currencyAr });
           })
           .catch(err => {
@@ -67,13 +72,28 @@ class ExchangeCurrency extends React.Component {
         this.setState({ undisplayedCurrency: this.state.undisplayedCurrency.filter((item) => currency !== item) });
     };
     
+    handleInputChange(e){
+        console.log(e.target.value)
+        this.setState({ amount: e.target.value });
+    };
+
 render() {
     return (
         <div className="exchange-currency">
             <div className="content-header">Foreign Exchange Currency</div>
             <div className="base">
-                <BaseCurrency/>
+                <div className="base-currency">
+                    <Currencies currency="USD"/>
+                <div className="text-field-container">
+                    <input 
+                    className="text-field" 
+                    type="number" 
+                    defaultValue={10.00}
+                    onChange={(e) => {this.handleInputChange(e)}}              
+                    />
+                </div>
             </div>
+        </div>
             <div className="target">
             {
             this.state.displayedCurrency.map((currency, index) =>

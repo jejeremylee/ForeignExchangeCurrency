@@ -19,7 +19,7 @@ export default function TargetCurrency({targetCurrency, currencyRates, currencyA
     return (
      <div className="target-currency">
         <div className="currency-info">
-            <div className="currencies-container">
+            <div className="currencies-content">
                 <Currencies currency={targetCurrency}/>
             </div>
             <div className='currency-info-content'>
