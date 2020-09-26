@@ -1,0 +1,35 @@
+.target-currency{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.currency-info{
+    display: flex;
+    flex-direction: row;
+    width: 1051px;
+    height: 163px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.currency-amount{
+    display: flex;
+    width: 937px;
+    height: 81px;
+    font-size: 50px;
+    color: #000000;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.currency-rate{
+    display: flex;
+    width: 937px;
+    height: 81px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    font-size: 30px;
+    color: #000000;
+}

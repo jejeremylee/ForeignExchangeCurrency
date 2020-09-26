@@ -1,0 +1,29 @@
+.exchange-currency{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-header{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    color: #4625B2;
+}
+
+.target{
+    margin-top: 1em;
+}
+
+.target-content{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.add-currencies{
+    margin-top: 1em;
+}
