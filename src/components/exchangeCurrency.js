@@ -41,8 +41,15 @@ class ExchangeCurrency extends React.Component {
 
     
     componentDidMount() {
+        const proxyurl="https://cors-anywhere.herokuapp.com/"
         axios
-          .get("http://api.openrates.io/latest?base=USD")
+          .get(proxyurl+"https://api.openrates.io/latest?base=USD",{
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+          },
+        })
           .then(response => {
             const currencyAr = [];
             currencyAr.push( response.data.rates)

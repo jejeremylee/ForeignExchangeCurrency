@@ -23,6 +23,7 @@
       "pre-push": "npm test"
     }
   },
+  
   "eslintConfig": {
     "extends": "react-app"
   },
